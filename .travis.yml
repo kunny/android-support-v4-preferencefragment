@@ -5,4 +5,12 @@ android:
     - build-tools-19.1.0
 
 env:
-  - TERM=dumb
+  - TERM=dumb  ANDROID_SDK=android-19  ANDROID_ABI=armeabi-v7a
+
+before_install:
+  - echo no | android create avd --force -n test -t $ANDROID_SDK --abi $ANDROID_ABI
+  - emulator -avd test -no-skin -no-window &
+
+before_script:
+  - ./wait_for_emulator
+  - adb shell input keyevent 82 &
