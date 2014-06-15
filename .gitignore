@@ -12,6 +12,7 @@
 bin/
 gen/
 out/
+build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -23,3 +24,6 @@ local.properties
 # IntelliJ Idea / Android Studio project files and directories.
 *.iml
 .idea/
+
+# Gradle
+.gradle/
